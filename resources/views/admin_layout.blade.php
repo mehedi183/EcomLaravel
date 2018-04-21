@@ -22,6 +22,8 @@
 	<link id="base-style" href="{{asset('backend/css/style.css')}}" rel="stylesheet">
 	<link id="base-style-responsive" href="{{asset('backend/css/style-responsive.css')}}" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+
+	{{-- <link rel="stylesheet" href="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')}}" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> --}}
 	<!-- end: CSS -->
 	
 
@@ -36,7 +38,7 @@
 	<![endif]-->
 		
 	<!-- start: Favicon -->
-	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="shortcut icon" href="{{asset('backend/img/favicon.ico')}}">
 	<!-- end: Favicon -->
 	
 		
@@ -216,7 +218,7 @@
 								</li>	
                             	<li>
                                     <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
+										<span class="avatar"><img src="{{asset('backend/img/avatar.jpg')}}" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
 										    	Łukasz Holeczek
@@ -232,7 +234,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-										<span class="avatar"><img src="img/avatar2.jpg" alt="Avatar"></span>
+										<span class="avatar"><img src="{{asset('backend/img/avatar2.jpg')}}" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
 										    	Megan Abott
@@ -248,7 +250,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-										<span class="avatar"><img src="img/avatar3.jpg" alt="Avatar"></span>
+										<span class="avatar"><img src="{{asset('backend/img/avatar3.jpg')}}" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
 										    	Kate Ross
@@ -264,7 +266,7 @@
                                 </li>
 								<li>
                                     <a href="#">
-										<span class="avatar"><img src="img/avatar4.jpg" alt="Avatar"></span>
+										<span class="avatar"><img src="{{asset('backend/img/avatar4.jpg')}}" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
 										    	Julie Blank
@@ -280,7 +282,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-										<span class="avatar"><img src="img/avatar5.jpg" alt="Avatar"></span>
+										<span class="avatar"><img src="{{asset('backend/img/avatar5.jpg')}}" alt="Avatar"></span>
 										<span class="header">
 											<span class="from">
 										    	Jane Sanders
@@ -340,13 +342,13 @@
 						<li><a href="{{route('show_dashboard')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>	
 						<li><a href="{{route('all_category')}}"><i class="icon-envelope"></i><span class="hidden-tablet"> Category</span></a></li>
 						<li><a href="{{route('add_category')}}"><i class="icon-tasks"></i><span class="hidden-tablet"> Add Category</span></a></li>
-						<li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> Brands</span></a></li>
-						<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> All Brands</span></a></li>
+						<li><a href="{{route('all_brand')}}"><i class="icon-eye-open"></i><span class="hidden-tablet"> Brands</span></a></li>
+						<li><a href="{{route('add_brand')}}"><i class="icon-dashboard"></i><span class="hidden-tablet"> Add Brands</span></a></li>
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Products</span><span class="label label-important"> New </span></a>
 							<ul>
-								<li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Products</span></a></li>
-								<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Products</span></a></li>
+								<li><a class="submenu" href="{{route('all_products')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Products</span></a></li>
+								<li><a class="submenu" href="{{route('add_products')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Products</span></a></li>
 							</ul>	
 						</li>
 						<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Slider</span></a></li>
@@ -406,8 +408,21 @@
 		</p>
 
 	</footer>
-	
+	{{-- Bootbox --}}
+
+	<script src="{{asset('https://code.jquery.com/jquery-3.3.1.min.js')}}" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js')}}"></script>
+	<script type="text/javascript" charset="utf8" src="{{asset('https://cdn.datatables.net/1.10.13/js/jquery.dataTables.js')}}"></script>
+
+
+	 @yield('script')
+	<script>
+		
+	</script>
+
 	<!-- start: JavaScript-->
+	
+	<script src="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')}}" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 	<script src="{{asset('backend/js/jquery-1.9.1.min.js')}}"></script>
 	<script src="{{asset('backend/js/jquery-migrate-1.0.0.min.js')}}"></script>

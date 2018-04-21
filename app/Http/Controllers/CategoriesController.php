@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Redirect;
 use DB;
 use Session;
 
@@ -46,6 +47,28 @@ class CategoriesController extends Controller
     		$publication_status =1;
     	}
     	DB::table('tbl_category')->where('category_id',$category_id)->update(['publication_status'=>$publication_status]);
+    	return redirect()->back();
+    }
+
+    public function edit_category($category_id){
+    	$category = DB::table('tbl_category')->where('category_id',$category_id)->first();
+    	return view('admin/edit_category')->with('category',$category);
+    }
+
+    public function update_category(Request $request,$category_id){
+    	$data=array();
+    	$data['category_name'] = $request->category_name;
+    	$data['category_description'] = $request->category_description;
+    	DB::table('tbl_category')->where('category_id',$category_id)
+    								->update($data);
+    	Session::put('message','Category Updated successfully.!');
+    	return Redirect::to('all_category');
+    }
+
+    public function delete_category($category_id){
+    	DB::table('tbl_category')->where('category_id',$category_id)
+    							->delete();
+    	Session::put('message','category deleted successfully..!');
     	return redirect()->back();
     }
 }
