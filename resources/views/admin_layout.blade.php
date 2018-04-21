@@ -308,6 +308,8 @@
 							</a>
 						</li>
 						<!-- start: User Dropdown -->
+
+
 						<li class="dropdown">
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<i class="halflings-icon white user"></i> 
@@ -315,9 +317,7 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-menu-title">
- 									<span>Account Settings</span>
-								</li>
+								<li class="dropdown-menu-title"><span>Account Settings</span></li>
 								<li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
 								<li><a href="{{route('admin_logout')}}"><i class="halflings-icon off"></i> Logout</a></li>
 							</ul>
@@ -351,10 +351,18 @@
 								<li><a class="submenu" href="{{route('add_products')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Products</span></a></li>
 							</ul>	
 						</li>
-						<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Slider</span></a></li>
+						<li>
+							<a class="dropmenu" href="#"><i class="icon-edit"></i><span class="hidden-tablet"> Slider</span><span class="label label-fade"> New </span></a>
+							<ul>
+								<li><a class="submenu" href="{{route('all_slider')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Slider</span></a></li>
+								<li><a class="submenu" href="{{route('add_slider')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Slider</span></a></li>
+							</ul>	
+						</li>
+						
 						<li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Social Links</span></a></li>
 						<li><a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Shop Name</span></a></li>
 						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Delivery Man</span></a></li>
+						<li><a href="{{route('admin_logout')}}"><i class="halflings-icon white off"></i><span class="hidden-tablet"> Logout</span></a></li>
 						{{-- <div>
 							<li><a href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>
 							<li><a href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>

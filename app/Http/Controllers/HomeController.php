@@ -8,6 +8,9 @@ use DB;
 class HomeController extends Controller
 {
     public function index(){
+    	$sliders = DB::table('tbl_slider')
+    				->where('publication_status',1)
+    				->get();
     	$products = DB::table('tbl_products')
     				->where('publication_status',1)
     				->limit(9)

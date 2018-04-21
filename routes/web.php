@@ -64,4 +64,14 @@ Route::group(['middleware' => 'AuthAdminCheck'], function () {
 	Route::get('/edit_product/{product_id}','ProductsController@edit_product')->name('edit_product');
 	Route::post('/update_product/{product_id}','ProductsController@update_product')->name('update_product');
 
+
+
+
+	/////Slider Related Route
+	Route::get('/all_slider','SliderController@index')->name('all_slider');
+	Route::get('/add_slider','SliderController@add_slider')->name('add_slider');
+	Route::post('/store_slider','SliderController@store_slider')->name('store_slider');
+	Route::get('/change_slider_publication_status/{slider_id}','SliderController@change_slider_publication_status')											->name('change_slider_publication_status');
+
+	Route::get('/delete_slider/{slider_id}', 'SliderController@delete_slider')->name('delete_slider');
 });

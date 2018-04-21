@@ -14,7 +14,7 @@ class CreateTblSliderTable extends Migration
     public function up()
     {
         Schema::create('tbl_slider', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('slider_id');
             $table->string('slider_image');
             $table->tinyInteger('publication_status');
             $table->timestamps();
