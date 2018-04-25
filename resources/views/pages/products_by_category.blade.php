@@ -3,28 +3,28 @@
 	<div class="features_items"><!--features_items-->
 	    <h2 class="title text-center">Features Items</h2>
 	    
-	    @foreach($products as $product)
+	    @foreach($products_by_category as $product_by_category)
 	    <div class="col-sm-4">
 	        <div class="product-image-wrapper">
 	            <div class="single-products">
 	                    <div class="productinfo text-center">
-	                        <img src="{{URL::to($product->product_image)}}" style="width: 280px; height: 220px;" alt="" />
-	                        <h2>{{$product->product_price}} Tk</h2>
-	                        <p>{{$product->product_short_description}}</p>
+	                        <img src="{{URL::to($product_by_category->product_image)}}" style="width: 280px; height: 220px;" alt="" />
+	                        <h2>{{$product_by_category->product_price}} Tk</h2>
+	                        <p>{{$product_by_category->product_short_description}}</p>
 	                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 	                    </div>
 	                    <div class="product-overlay">
 	                        <div class="overlay-content">
-	                            <h2>{{$product->product_price}} Tk</h2>
-	                            <a href="{{route('view_product',$product->product_id)}}" title=""><p>{{$product->product_name}}</p></a>
-	                            <a href="{{route('view_product',$product->product_id)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+	                            <h2>{{$product_by_category->product_price}} Tk</h2>
+	                            <a href="{{route('view_product',$product_by_category->product_id)}}" title=""><p>{{$product_by_category->product_name}}</p></a>
+	                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 	                        </div>
 	                    </div>
 	            </div>
 	            <div class="choose">
 	                <ul class="nav nav-pills nav-justified">
-	                    <li><a href="#"><i class="fa fa-plus-square"></i>{{$product->manufacture_name}}</a></li>
-	                    <li><a href="{{route('view_product',$product->product_id)}}"><i class="fa fa-plus-square"></i>View Product</a></li>
+	                    <li><a href="#"><i class="fa fa-plus-square"></i>{{$product_by_category->manufacture_name}}</a></li>
+	                    <li><a href="{{route('view_product',$product_by_category->product_id)}}"><i class="fa fa-plus-square"></i>View Product</a></li>
 	                </ul>
 	            </div>
 	        </div>
@@ -33,7 +33,7 @@
 	    
 	</div><!--features_items-->
 	
-	<div class="category-tab"><!--category-tab-->
+	{{-- <div class="category-tab"><!--category-tab-->
 	    <div class="col-sm-12">
 	        <ul class="nav nav-tabs">
 	            <li class="active"><a href="#tshirt" data-toggle="tab">T-Shirt</a></li>
@@ -416,6 +416,6 @@
 	            <i class="fa fa-angle-right"></i>
 	          </a>          
 	    </div>
-	</div><!--/recommended_items-->
+	</div><!--/recommended_items--> --}}
 
 @endsection

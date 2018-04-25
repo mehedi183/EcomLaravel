@@ -11,17 +11,46 @@
 |
 */
 //frontend Route............................
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
+
+
+
+//product_by_category
+Route::get('product_by_category/{category_id}', 'HomeController@show_product_by_category')->name('show_product_by_category');
+
+
+
+//product_by_brand
+Route::get('product_by_brand/{menufacture_id}', 'HomeController@show_product_by_brand')->name('show_product_by_brand');
+
+
+//view product on single page
+Route::get('view_product/{product_id}', 'HomeController@view_product')->name('view_product');
+
+//Add to Cart
+Route::post('/add_to_cart', 'CartController@add_to_cart')->name('add_to_cart');
+Route::get('/show_cart', 'CartController@show_cart')->name('show_cart');
+Route::get('/remove_item_from_cart/{id}', 'CartController@remove_item_from_cart')->name('remove_item_from_cart');
+Route::post('/update_cart', 'CartController@update_cart')->name('update_cart');
+
+////Check Out Routes
+
+Route::get('/login_check', 'CheckOutController@login_check')->name('login_check');
+Route::post('/customer_registration', 'CheckOutController@customer_registration')->name('customer_registration');
+Route::get('/checkout','CheckOutController@checkout')->name('checkout');
+Route::post('/save_shipping_details','CheckOutController@save_shipping_details')->name('save_shipping_details');
+
+//Payment Routes
+Route::get('/payment', 'CheckOutController@payment')->name('payment');
+Route::post('/place_order', 'CheckOutController@place_order')->name('place_order');
 
 
 
 
+// Customer Logout
 
-
-
-
-
-
+Route::post('customer_login}','CustomerController@customer_login')->name('customer_login');
+Route::get('logout/{customer_id}','CustomerController@customer_logout')->name('customer_logout');
 
 
 //Backend Route............................
@@ -74,4 +103,18 @@ Route::group(['middleware' => 'AuthAdminCheck'], function () {
 	Route::get('/change_slider_publication_status/{slider_id}','SliderController@change_slider_publication_status')											->name('change_slider_publication_status');
 
 	Route::get('/delete_slider/{slider_id}', 'SliderController@delete_slider')->name('delete_slider');
+	
+
+	////Manage Order related Route
+	Route::get('/manage_order', 'ManageOrderController@manage_order')->name('manage_order');
+	Route::get('/view_order/{order_id}', 'ManageOrderController@view_order')->name('view_order');
+
+
+
+
+
+
+
+
 });
+

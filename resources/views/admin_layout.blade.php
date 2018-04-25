@@ -361,7 +361,7 @@
 						
 						<li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Social Links</span></a></li>
 						<li><a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Shop Name</span></a></li>
-						<li><a href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Delivery Man</span></a></li>
+						<li><a href="{{route('manage_order')}}"><i class="icon-picture"></i><span class="hidden-tablet"> Manage Order</span></a></li>
 						<li><a href="{{route('admin_logout')}}"><i class="halflings-icon white off"></i><span class="hidden-tablet"> Logout</span></a></li>
 						{{-- <div>
 							<li><a href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>

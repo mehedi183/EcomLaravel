@@ -142,3 +142,17 @@ class ProductsController extends Controller
         
     }
 }
+
+
+
+// public function show_product_by_category($category_id){
+//         $products_by_category = DB::table('tbl_products')->where('category_id',$category_id)
+//                                             ->where('publication_status',1)
+//                                             ->limit(18)
+//                                             ->get();
+
+//         $sliders = DB::table('tbl_slider')->where('publication_status',1)->get();
+
+//         return view('pages/products_by_category')->with('products_by_category',$products_by_category)
+//                                                 ->with('sliders',$sliders);
+//     }

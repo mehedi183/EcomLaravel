@@ -22,11 +22,11 @@ class AuthAdmin
     public function AuthAdminCheck(){
         $admin_id = Session::get('admin_id');
         //dd($admin_id);
-        if ($admin_id) {
+        if (!$admin_id) {
             //return;
             
-        }
-        else{
+        // }
+        // else{
             return redirect()->route('admin_login')->send();
         }
     }
